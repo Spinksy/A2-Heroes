@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeroDetailComponent, HeroListComponent } from './components/component.index';
+import { HeroComponent, HeroDetailComponent, HeroListComponent } from './components/component.index';
+
+import { HeroService } from './shared/services/hero.service';
 
 @NgModule({
   imports: [
@@ -12,9 +14,13 @@ import { HeroDetailComponent, HeroListComponent } from './components/component.i
   ],
   declarations: [
     AppComponent,
+    HeroComponent,
     HeroDetailComponent,
     HeroListComponent
     ],
+    providers: [
+      HeroService
+    ]
   bootstrap: [
     AppComponent
   ]
