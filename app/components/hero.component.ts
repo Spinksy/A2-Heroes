@@ -7,8 +7,8 @@ import { HeroDetailComponent, HeroListComponent } from './component.index';
 @Component({
   moduleId: module.id,
   selector: 'heroes',
-  templateUrl: 'hero.component.html'
-  providers: [ Hero, HeroService, HeroDetailComponent, HeroListComponent ]
+  templateUrl: 'hero.component.html',
+  providers: [ Hero, HeroDetailComponent, HeroListComponent ]
 })
 export class HeroComponent  { 
 

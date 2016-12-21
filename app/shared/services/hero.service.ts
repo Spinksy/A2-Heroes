@@ -19,4 +19,8 @@ export class HeroService {
     query(): Promise<Hero[]> {
         return Promise.resolve(this.MOCKHEROES);
     }
+
+    get(id: number): Promise<Hero> {
+        return this.query().then(heroes => heroes.find(hero => hero.id === id));
+    }
 }
