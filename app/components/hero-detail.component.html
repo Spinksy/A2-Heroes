@@ -1,0 +1,12 @@
+<div *ngIf="hero">
+<h2>{{hero.name}} details!</h2>
+<div>
+    <label for="hero-id">Id: {{hero.id}}</label>
+</div>
+<div>
+    <label for="hero-name">Name: </label>
+    <input type="text" [(ngModel)]="hero.name" placeholder="Name">
+</div>
+</div>
+<h2 *ngIf="!hero">No Hero Selected</h2>
+<hr>
