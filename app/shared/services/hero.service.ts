@@ -3,7 +3,7 @@ import { Hero } from '../models/Hero';
 
 @Injectable()
 export class HeroService {
-    HEROES: Hero[] = [
+    MOCKHEROES: Hero[] = [
         { id: 11, name: 'Mr. Nice' },
         { id: 12, name: 'Narco' },
         { id: 13, name: 'Bombasto' },
@@ -16,7 +16,7 @@ export class HeroService {
         { id: 20, name: 'Tornado' }
     ];
 
-    query(): Hero[] {
-        return this.HEROES;
+    query(): Promise<Hero[]> {
+        return Promise.resolve(this.MOCKHEROES);
     }
 }

@@ -13,22 +13,24 @@ import { HeroDetailComponent, HeroListComponent } from './components/component.i
 })
 export class AppComponent  { 
 
-  heroes: Hero[];
   title: string = 'Tour of Heroes';
+  heroes: Hero[];
   selectedHero: Hero;
   hero: Hero;
 
-  constructor(hero: Hero, private titleService: Title, private heroService: HeroService) {
-    this.hero = {id: 1, name: 'Batman'};
-    this.heroes = heroService.query();
+  constructor(private titleService: Title, private heroService: HeroService) {
+  }
+
+  getHeroes(): void{
+    this.heroService.query().then(heroes => this.heroes = heroes);
   }
 
   heroSelected(hero: Hero): void {
-    console.log('Received ' + JSON.stringify(hero));
     this.selectedHero = this.selectedHero ? hero.name == this.selectedHero.name ? undefined : hero : hero;
    }
 
-  ngOnInit(){
+  ngOnInit(): void{
     this.titleService.setTitle(this.title);
+    this.getHeroes();
   }
 }
