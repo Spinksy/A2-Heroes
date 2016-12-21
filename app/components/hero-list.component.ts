@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+
 import { Hero } from '../shared/models/Hero';
 
 @Component({
@@ -14,7 +15,6 @@ export class HeroListComponent {
     @Output() onSelectedHero = new EventEmitter<Hero>();
 
     onSelect(hero: Hero): void {
-        console.log('Emitting selection');
         this.onSelectedHero.emit(hero);
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Hero } from '../shared/models/hero';
 import { HeroService } from '../shared/services/hero.service'
@@ -8,6 +9,7 @@ import { HeroDetailComponent, HeroListComponent } from './component.index';
   moduleId: module.id,
   selector: 'heroes',
   templateUrl: 'hero.component.html',
+  styleUrls: ['hero.component.css'],
   providers: [ Hero, HeroDetailComponent, HeroListComponent ]
 })
 export class HeroComponent  { 
@@ -15,8 +17,10 @@ export class HeroComponent  {
   heroes: Hero[];
   selectedHero: Hero;
   hero: Hero;
+  router: Router;
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService,
+  private router: Router) {
   }
 
   getHeroes(): void{
@@ -25,6 +29,10 @@ export class HeroComponent  {
 
   heroSelected(hero: Hero): void {
     this.selectedHero = this.selectedHero ? hero.name == this.selectedHero.name ? undefined : hero : hero;
+   }
+
+   goToDetail(): void {
+     this.router.navigate(['/detail', this.selectedHero.id]);
    }
 
   ngOnInit(): void{
