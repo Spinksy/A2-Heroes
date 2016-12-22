@@ -17,8 +17,7 @@ export class HeroComponent  {
   heroes: Hero[];
   selectedHero: Hero;
   hero: Hero;
-  router: Router;
-
+  
   constructor(private heroService: HeroService,
   private router: Router) {
   }
