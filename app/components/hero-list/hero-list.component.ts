@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { HeroService } from '../shared/services/hero.service';
-import { Hero } from '../shared/models/Hero';
+import { HeroService } from '../../shared/services/hero.service';
+import { Hero } from '../../shared/models/Hero';
 
 @Component({
     moduleId: module.id,
